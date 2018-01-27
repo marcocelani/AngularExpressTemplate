@@ -1,11 +1,11 @@
 {
-  "name": "angular2-express-template",
+  "name": "angular-express-template",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "server": "APPNAME='Angular2ExpressTemplate' PORT='8080' node dist/server/server.js",
+    "server": "APPNAME='AngularExpressTemplate' PORT='8080' node dist/server/server.js",
     "build": "ng build --prod",
     "build_client": "npm run build",
     "build_server": "tsc -p src/server/tsconfig.json",
