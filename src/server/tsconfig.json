@@ -1,15 +1,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "../../dist/server",
+    "outDir": "../../dist",
     "sourceMap": true,
-    "declaration": false,
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ]
-  }
+    "module": "commonjs",
+    "target": "es6",
+    "skipLibCheck": true
+  },
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

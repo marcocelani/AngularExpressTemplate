@@ -3,10 +3,13 @@ import * as compression from 'compression';
 import * as http from 'http';
 import { Logger } from './Logger';
 import { setTimeout } from 'timers';
+import { Routing } from './routing';
+import * as cors from 'cors';
 
 class Server {
     private app: express.Application;
     private server: http.Server;
+    private routing: Routing;
 
     constructor() {
         process.on('SIGINT', () => {
@@ -25,6 +28,7 @@ class Server {
         });
 
         this.app = express();
+        this.routing = new Routing();
         this.configureExpressMiddleware();
         this.configureExpressRouting();
     }
@@ -34,10 +38,20 @@ class Server {
         this.stop();
     }
 
+    // you can set your routing parameters here.
     private configureExpressRouting(): void {
+        this.app.get('/api/version', (req, res) => {
+            this.routing.manage_version(req, res);
+        });
     }
-
+    // you can set your middleware here.
     private configureExpressMiddleware(): void {
+        // enable CORS stuff only in a development
+        // enviroment
+        if (process.env.NODE_ENV === 'development') {
+            Logger.logInfo(`enabling CORS...`);
+            this.app.use(cors());
+        }
         this.app.use(compression());
         this.app.use(express.static('dist/client'));
     }
