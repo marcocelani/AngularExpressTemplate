@@ -2,15 +2,29 @@
 
 This is an Angular 6 template with Express 4 (with TypeScript support).
 
+## Configuration
+0. Run `npm install` for *node_modules* folder set up.
+1. Rename .env.example in .env and configure your vars.
+
+## Angular CLI
+
+Run `ng serve` for running @angular/cli (`http://localhost:4200/`).
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run server` or use "Debug/Run" if you are using *vscode*.
 
-Note that if you need Express routing (e.g. RESTful api) you must start server separately. See below.
+Angular CLI and Expres work togheter. In development mode CORS
+are enabled by default.
 
 ## Code scaffolding
 
-Run `ng generate component component-name -m app` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular template is inside *src/client*. Server stuffs is inside *src/server* instead.
+
+*src/shared* contains code shared between client and server (e.g. *models*)
+
+There are two **tsconfig.json**. The first one is located into project's root and is related to Angular.
+The second one is related to server and is located in src/server.
 
 ## Build
 
@@ -20,11 +34,11 @@ Run `npm run build_client` to build client.
 
 Run `npm run build_server` to build server.
 
-`dist/` is the output folder.
+*dist/* is the output folder.
 
-## Running Express
+## Running Server
 
-Run `npm run server` to run Express (build it first).
+Run `npm run server` to run Express (it will automatically build).
 
 ## Running unit tests
 
@@ -34,6 +48,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
