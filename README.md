@@ -1,6 +1,6 @@
 # AngularExpressTemplate
 
-This is Angular 5 template with Express 4 (with TypeScript support).
+This is an Angular 6 template with Express 4 (with TypeScript support).
 
 ## Development server
 
