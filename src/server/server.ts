@@ -13,7 +13,7 @@ class Server {
 
     constructor() {
         process.on('SIGINT', () => {
-            if (process.env.PROD === true) {
+            if (process.env.NODE_ENV === 'development') {
                 return;
             }
             this.manageSIGTERM();
